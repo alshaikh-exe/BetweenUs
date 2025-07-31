@@ -4,7 +4,7 @@ A social media forum for anonymous expression.
 Users are represented only by a color and a system‑generated ID, allowing them to share Feels (thoughts, opinions, expressions) and Asks (questions).
 The platform emphasizes anonymity and authenticity, enabling posts, replies, and votes without revealing personal details.
 
-## File Structure
+## 📁 File Structure
 ```
 betweenus/
 ├── controllers/
