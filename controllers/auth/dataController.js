@@ -25,3 +25,20 @@ exports.loginUser = async (req, res, next) => {
         res.status(400).json({ message: error.message });
     }
 }
+
+exports.getProfile = async (req, res, next) => {
+    try {
+        const user = await User.findOne();
+        let posts = [];
+        if (!user) {
+            res.locals.data = { user: null, posts: [] };
+        }
+        else {
+            res.locals.data = {user, posts}
+        }
+        next();
+    }
+    catch (error) {
+        res.status(400).json({ message: error.message });
+    }
+}
