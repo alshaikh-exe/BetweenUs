@@ -2,6 +2,11 @@ const express = require("express");
 const morgan = require("morgan");
 const jsxEngine = require("jsx-view-engine");
 const methodOverride = require("method-override");
+const userRoutes = require("./routes/userRoutes");
+const feedRoutes = require("./routes/feedRoutes");
+const postRoutes = require("./routes/postRoutes");
+const replyRoutes = require("./routes/replyRoutes");
+const voteRoutes = require("./routes/voteRoutes");
 const app = express();
 
 app.set("view engine", "jsx");
@@ -15,9 +20,12 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use(express.static("assets"));
+app.use(express.static("public"));
 app.use(morgan("dev"));
 app.use("/users", userRoutes);
-app.use("/feed", feedRoutes);
+app.use("/", feedRoutes);
+app.use("/posts", postRoutes);
+app.use("/replies", replyRoutes);
+app.use("/votes", voteRoutes);
 
 module.exports = app;

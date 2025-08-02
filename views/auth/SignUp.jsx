@@ -4,7 +4,7 @@ function SignUp (props) {
     return(
         <div>
             <h1>Sign Up</h1>
-            <form action="/users" method="POST">
+            <form action="/users/signup" method="POST">
                 Full Name: <input type="text" name="name" />
                 <br/>
                 Email: <input type="email" name="email" />
