@@ -4,6 +4,9 @@ function Index (props) {
     return (
         <div>
             <h1>Index Page</h1>
+            <a href="/asks">Asks</a>
+            <br />
+            <a href="/feels">Feels</a>
         </div>
     )
 };
