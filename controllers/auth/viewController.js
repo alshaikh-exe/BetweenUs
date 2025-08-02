@@ -11,6 +11,9 @@ const viewController = {
     },
     redirectToHome (req, res, next) {
         res.redirect("/");
+    },
+    showProfile (req, res) {
+        res.render("profile/Profile", res.locals.data);
     }
 }
 
