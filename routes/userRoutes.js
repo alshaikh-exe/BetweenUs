@@ -9,4 +9,6 @@ router.post("/signup", userController.createUser, viewController.redirectToLogin
 router.get("/login", viewController.login);
 router.post("/login", userController.loginUser, viewController.redirectToHome);
 
+router.get("/profile", userController.getProfile, viewController.showProfile);
+
 module.exports = router;
