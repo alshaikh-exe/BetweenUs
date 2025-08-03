@@ -32,6 +32,9 @@ exports.createUser = async (req, res, next) => {
             return res.status(400).json({ message: "Missing required credentials"});
         }
         const hashedPass = await bcrypt.hash(req.body.password, 10);
+        const count = await User.countDocuments();
+        const idCounter = count + 1;
+        
         const user = new User({
             name: req.body.name,
             email: req.body.email,
@@ -69,7 +72,7 @@ exports.loginUser = async (req, res, next) => {
 
 exports.getProfile = async (req, res, next) => {
     try {
-        const posts = await Post.find({ author: req.user._id }).populate("author", "color");
+        const posts = await Post.find({ author: req.user._id }).populate("author", "shortId");
         res.locals.data.userPosts = {
             user: req.user,
             posts

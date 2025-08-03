@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 
 exports.index = async (req, res, next) => {
     try {
-        res.locals.data.posts = await Post.find({}).populate("author", "color");
+        res.locals.data.posts = await Post.find({}).populate("author", "shortId");
         next();
     }
     catch (error) {
@@ -62,7 +62,7 @@ exports.createPost = async (req, res, next) => {
 
 exports.showPost = async (req, res, next) => {
     try {
-        res.locals.data.post = await Post.findById(req.params.id).populate("author", "color")
+        res.locals.data.post = await Post.findById(req.params.id).populate("author", "shortId")
         if (!res.locals.data.post) {
             throw new Error(`No post with id ${req.params.id} in our database`);
         }
@@ -75,7 +75,7 @@ exports.showPost = async (req, res, next) => {
 
 exports.asks = async (req, res, next) => {
     try {
-        res.locals.data.posts = await Post.find({ type: "ask" }).populate("author", "color")
+        res.locals.data.posts = await Post.find({ type: "ask" }).populate("author", "shortId")
         next();
     }
     catch (error) {
@@ -85,7 +85,7 @@ exports.asks = async (req, res, next) => {
 
 exports.feels = async (req, res, next) => {
     try {
-        res.locals.data.posts = await Post.find({ type: "feel" }).populate("author", "color")
+        res.locals.data.posts = await Post.find({ type: "feel" }).populate("author", "shortId")
         next();
     }
     catch (error) {

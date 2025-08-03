@@ -1,25 +1,5 @@
 const React = require("react");
 
-/*
-const postSchema = mongoose.Schema({
-    type: { type: String, required: true },
-    image: { type: String },
-    title: { type: String, required: true },
-    text: { type: String, required: true },
-    author: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
-    votes: { type: Number, required: true, default: 0},
-},
-*/
-
-const colorName = {
-    "#ff595e": "Red",
-    "#ffca3a": "Yellow",
-    "#8ac926": "Green",
-    "#1982c4": "Blue",
-    "#6a4c93": "Purple",
-    "#292f36": "Black",
-}
-
 function Index (props) {
     const token = props.token;
     const posts = props.posts;
@@ -42,7 +22,7 @@ function Index (props) {
                         <br/>
                             <a href={`/post/${post._id}?token=${token}`}>{post.text}</a> 
                              <br/>
-                             Posted by: {colorName[post.author.color]}
+                             Posted by: {post.author.shortId || "Unknown" }
                             <br/>
                            Votes: {post.votes}
                         </li>)
