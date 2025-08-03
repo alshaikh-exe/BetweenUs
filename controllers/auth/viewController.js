@@ -10,7 +10,11 @@ const viewController = {
         res.redirect("/users/login");
     },
     redirectToHome (req, res, next) {
-        res.redirect("/");
+        if (res.locals.data.token) {
+            res.redirect(`/?token=${res.locals.data.token}`);
+        } else {
+            res.redirect("/");
+        }
     },
     showProfile (req, res) {
         res.render("profile/Profile", res.locals.data);

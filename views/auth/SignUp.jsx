@@ -11,7 +11,7 @@ function SignUp (props) {
                 <br/>
                 Password: <input type="text" name="password" />
                 <br/>
-                Color: <select name="color" id="user-color">
+                Color: <select name="color" id="user-color" required>
                     <option value="">Select your color!</option>
                     <option value="#ff595e">Red</option>
                     <option value="#ffca3a">Yellow</option>

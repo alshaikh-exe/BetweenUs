@@ -2,11 +2,10 @@ const express = require("express");
 const morgan = require("morgan");
 const jsxEngine = require("jsx-view-engine");
 const methodOverride = require("method-override");
-const userRoutes = require("./routes/userRoutes");
-const feedRoutes = require("./routes/feedRoutes");
-const postRoutes = require("./routes/postRoutes");
-const replyRoutes = require("./routes/replyRoutes");
-const voteRoutes = require("./routes/voteRoutes");
+const userRoutes = require("./controllers/auth/routeController");
+const feedRoutes = require("./controllers/feed/routeController");
+const replyRoutes = require("./controllers/replies/routeController");
+const voteRoutes = require("./controllers/votes/routeController");
 const app = express();
 
 app.set("view engine", "jsx");
@@ -24,7 +23,6 @@ app.use(express.static("public"));
 app.use(morgan("dev"));
 app.use("/users", userRoutes);
 app.use("/", feedRoutes);
-app.use("/posts", postRoutes);
 app.use("/replies", replyRoutes);
 app.use("/votes", voteRoutes);
 
