@@ -3,6 +3,7 @@ const React = require("react");
 function SignIn (props) {
     return(
         <div>
+            <a href="/users/signup">Create Account</a>
             <h1>Login</h1>
             <form action="/users/login" method="POST">
                 Email: <input type="email" name="email" /><br/>

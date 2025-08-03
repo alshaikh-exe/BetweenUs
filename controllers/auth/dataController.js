@@ -22,7 +22,7 @@ exports.auth = async (req, res, next) => {
         next();
     }
     catch (error) {
-        res.status(401).send("Not authorized");
+        res.render("auth/Login", { message: "Please sign in first."});
     }
 }
 

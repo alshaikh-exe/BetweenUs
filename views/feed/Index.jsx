@@ -28,6 +28,8 @@ function Index (props) {
             <a href={`/users/profile?token=${token}`}>My Profile</a>
             <br/>
             <a href={`/post/new?token=${token}`}>Create New Post</a>
+            <br/>
+            <a href="/users/login">Sign In</a>
             <h1>Index Page</h1>
             <a href={`/asks?token=${token}`}>Asks</a>
             <br />
