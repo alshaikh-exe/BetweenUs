@@ -10,7 +10,7 @@ function Index (props) {
             <a href={`/post/new?token=${token}`}>Create New Post</a>
             <br/>
             <a href="/users/login">Sign In</a>
-            <h1>Index Page</h1>
+            <h1>Home Page</h1>
             <a href={`/asks?token=${token}`}>Asks</a>
             <br />
             <a href={`/feels?token=${token}`}>Feels</a>
