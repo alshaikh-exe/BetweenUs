@@ -1,4 +1,5 @@
 const User = require("../../models/user")
+const Post = require("../../models/post");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
@@ -68,15 +69,12 @@ exports.loginUser = async (req, res, next) => {
 
 exports.getProfile = async (req, res, next) => {
     try {
-        const user = await User.findOne();
-        let posts = [];
-        if (!user) {
-            res.locals.data.userPosts = { user: null, posts: [] };
+        const posts = await Post.find({ author: req.user._id }).populate("author", "color");
+        res.locals.data.userPosts = {
+            user: req.user,
+            posts
         }
-        else {
-            res.locals.data.userPosts = {user, posts}
-            
-        }
+        res.locals.data.token = req.query.token;
         next();
     }
     catch (error) {

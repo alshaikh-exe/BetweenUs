@@ -12,6 +12,12 @@ const viewController = {
     newPost (req, res) {
         res.render("posts/New", res.locals.data);
     },
+    editPost (req, res) {
+        res.render("posts/Edit", res.locals.data);
+    },
+    showPost (req, res) {
+        res.render("posts/Show", res.locals.data)
+    },
     redirectToHome (req, res) {
         res.redirect(`/?token=${res.locals.data.token}`);
     }

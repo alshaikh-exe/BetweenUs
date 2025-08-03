@@ -11,6 +11,15 @@ const postSchema = mongoose.Schema({
 },
 */
 
+const colorName = {
+    "#ff595e": "Red",
+    "#ffca3a": "Yellow",
+    "#8ac926": "Green",
+    "#1982c4": "Blue",
+    "#6a4c93": "Purple",
+    "#292f36": "Black",
+}
+
 function Index (props) {
     const token = props.token;
     const posts = props.posts;
@@ -18,7 +27,7 @@ function Index (props) {
         <div>
             <a href={`/users/profile?token=${token}`}>My Profile</a>
             <br/>
-            <a href={`/feed/new?token=${token}`}>Create New Post</a>
+            <a href={`/post/new?token=${token}`}>Create New Post</a>
             <h1>Index Page</h1>
             <a href={`/asks?token=${token}`}>Asks</a>
             <br />
@@ -29,9 +38,9 @@ function Index (props) {
                         return (
                         <li>{`${post.type}: ${post.title}`} 
                         <br/>
-                            <a href={`/feed/${post._id}?token=${token}`}>{post.text}</a> 
+                            <a href={`/post/${post._id}?token=${token}`}>{post.text}</a> 
                              <br/>
-                           Posted by: {post.author.color}
+                             Posted by: {colorName[post.author.color]}
                             <br/>
                            Votes: {post.votes}
                         </li>)
