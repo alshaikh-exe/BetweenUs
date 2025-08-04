@@ -16,6 +16,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method")); 
 app.use((req, res, next) => {
     res.locals.data = {};
+    if (req.query.token) {
+        res.locals.data.token = req.query.token;
+    }
     next();
 });
 
@@ -23,7 +26,7 @@ app.use(express.static("public"));
 app.use(morgan("dev"));
 app.use("/users", userRoutes);
 app.use("/", feedRoutes);
-app.use("/replies", replyRoutes);
+app.use("/post/:id/replies", replyRoutes);
 app.use("/votes", voteRoutes);
 
 module.exports = app;
