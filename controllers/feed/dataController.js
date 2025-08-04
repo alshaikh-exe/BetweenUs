@@ -76,19 +76,29 @@ exports.createPost = async (req, res, next) => {
 exports.showPost = async (req, res, next) => {
     try {
         
-        res.locals.data.post = await Post.findById(req.params.id).populate("author", "shortId _id")
-        if (!res.locals.data.post) {
+        const post = await Post.findById(req.params.id).populate("author", "shortId _id")
+        if (!post) {
             throw new Error(`No post with id ${req.params.id} in our database`);
         }
 
+        res.locals.data.post = post
+        // console.log("user",req.user)
+        // console.log("Author", post.author)
+        // console.log(req.user._id.toString())
+        // console.log(post.author._id.toString())
+        // if (post.author._id.toString() !== req.user._id.toString()) {
+        //     console.log("true")
+        // }
+        // else{
+        //     console.log("false")
+        // }
         if(req.path.includes("edit")) {
-            if (!req.user || post.author.toString() !== req.user._id.toString()) {
+            if (!req.user || !post.author || post.author._id.toString() !== req.user._id.toString()) {
             return res.status(403).send({ message: "Not authorized to edit this post"})
         }
         }
 
         const replies = await Reply.find({ post: req.params.id }).populate("author", "shortId").sort({ createdAt: -1 })
-        console.log("Replies fetched:", replies.length);
         res.locals.data.replies = replies;
         next();
     }

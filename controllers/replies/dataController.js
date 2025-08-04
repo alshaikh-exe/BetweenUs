@@ -5,8 +5,23 @@ exports.getReply = async (req, res, next) => {
     try {
         const reply = await Reply.findById(req.params.replyId).populate("post", "_id title");
 
-        if (!req.user || reply.author.toString() !== req.user._id.toString()) {
+        // if (!req.user || !reply.author || reply.author._id?.toString() !== req.user._id.toString()) {
+        //     return res.status(403).send({ message: "Not authorized to edit this reply"})
+        // }
+        //  console.log("user",req.user)
+        // console.log("Author", reply.author)
+        // console.log(req.user._id.toString())
+        // console.log(reply.author._id.toString())
+        // if (reply.author._id.toString() !== req.user._id.toString()) {
+        //     console.log("true")
+        // }
+        // else{
+        //     console.log("false")
+        // }
+        if(req.path.includes("edit")) {
+            if (!req.user || !reply.author || reply.author._id.toString() !== req.user._id.toString()) {
             return res.status(403).send({ message: "Not authorized to edit this reply"})
+        }
         }
 
         res.locals.data.reply= reply;
@@ -21,7 +36,7 @@ exports.deleteReply = async (req, res, next) => {
     try {
         const reply = await Reply.findById(req.params.replyId);
 
-        if (!req.user || reply.author.toString() !== req.user._id.toString()) {
+        if (reply.author._id.toString() !== req.user._id.toString()) {
             return res.status(403).send({ message: "Not authorized to delete this reply"})
         }
 
@@ -39,7 +54,7 @@ exports.updateReply = async (req, res, next) => {
     try {
 const reply = await Reply.findById(req.params.replyId);
 
-if (reply.author.toString() !== req.user._id.toString()) {
+if (reply.author._id.toString() !== req.user._id.toString()) {
     return res.status(403).send({ message: "Not authorized to edit this reply"})
 }
 

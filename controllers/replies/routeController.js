@@ -19,7 +19,7 @@ router.put("/:replyId",userDataController.auth, dataController.updateReply, view
 router.post("/", userDataController.auth, dataController.createReply, viewController.redirectToPost)
 
 // Edit
-router.get("/:replyId/edit", dataController.getReply, viewController.editReply)
+router.get("/:replyId/edit",userDataController.auth, dataController.getReply, viewController.editReply)
 
 // Show
 
