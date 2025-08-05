@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken");
 
 exports.index = async (req, res, next) => {
     try {
-        res.locals.data.posts = await Post.find({}).populate("author", "shortId").sort({ createdAt: -1 })
+        res.locals.data.posts = await Post.find({}).populate("author", "shortId color").sort({ createdAt: -1 })
         next();
     }
     catch (error) {
@@ -46,7 +46,7 @@ exports.updatePost = async (req, res, next) => {
                 image: req.body.image,
                 text: req.body.text,
             },
-            { new: true }).populate("author", "shortId")
+            { new: true }).populate("author", "shortId color")
             res.locals.data.post = updatedPost;
         next();
     }
@@ -76,7 +76,7 @@ exports.createPost = async (req, res, next) => {
 exports.showPost = async (req, res, next) => {
     try {
         
-        const post = await Post.findById(req.params.id).populate("author", "shortId _id")
+        const post = await Post.findById(req.params.id).populate("author", "shortId _id color")
         if (!post) {
             throw new Error(`No post with id ${req.params.id} in our database`);
         }
@@ -98,7 +98,7 @@ exports.showPost = async (req, res, next) => {
         }
         }
 
-        const replies = await Reply.find({ post: req.params.id }).populate("author", "shortId").sort({ createdAt: -1 })
+        const replies = await Reply.find({ post: req.params.id }).populate("author", "shortId color").sort({ createdAt: -1 })
         res.locals.data.replies = replies;
         next();
     }
@@ -109,7 +109,7 @@ exports.showPost = async (req, res, next) => {
 
 exports.asks = async (req, res, next) => {
     try {
-        res.locals.data.posts = await Post.find({ type: "ask" }).populate("author", "shortId").sort({ createdAt: -1 })
+        res.locals.data.posts = await Post.find({ type: "ask" }).populate("author", "shortId color").sort({ createdAt: -1 })
         next();
     }
     catch (error) {
@@ -119,7 +119,7 @@ exports.asks = async (req, res, next) => {
 
 exports.feels = async (req, res, next) => {
     try {
-        res.locals.data.posts = await Post.find({ type: "feel" }).populate("author", "shortId").sort({ createdAt: -1 })
+        res.locals.data.posts = await Post.find({ type: "feel" }).populate("author", "shortId color").sort({ createdAt: -1 })
         next();
     }
     catch (error) {

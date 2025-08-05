@@ -11,7 +11,6 @@ function Index (props) {
                 <div class="header-left">
             <a href={`/users/profile?token=${token}`}>My Profile</a>
             <br/>
-            <a href={`/post/new?token=${token}`}>Create New Post</a>
             </div>
 
             <div class="header-center">
@@ -26,19 +25,38 @@ function Index (props) {
             <a href="/users/login">Sign In</a>
             </div>
             </div>
-             <ul>
+            <div>
+             <ul class="post-container">
                 {
                     posts.map( (post) => {
                         return (
-                        <li>{`${post.type}: ${post.title}`} 
-                        <br/>
-                            <a href={`/post/${post._id}?token=${token}`}>{post.text}</a> 
-                             <br/>
-                             Posted by: {post.author.shortId || "Unknown" }
+                        <li class="post">
+                             <div class={`post-type ${post.type}`}>
+                                {post.type === "ask" ? "Ask" : "Feel"}
+                            </div>
+                            <div class="post-inner">
+                            <div class="post-header">
+                            <div class="user-profile-post"
+                                style={{ backgroundColor: post.author.color}}
+                            >
+                                {/* <img src="/avatar.png" alt="avatar" class="avatar-img" /> */}
+                            </div>
+                            
+                             <span class="poster-name">{post.author.shortId || "Unknown" }</span>
+
+                             </div>
+
+                             <h3 class="post-title">{post.title}</h3>
+
+                             <p class="post-content">
+                             <a href={`/post/${post._id}?token=${token}`}>{post.text}</a>
+                             </p>
+                             </div>
                         </li>)
                     })
                 }
             </ul>
+            </div>
         </div>
         </Layout>
     )
