@@ -14,6 +14,7 @@ function Index (props) {
              <div class="user-profile"
                 style={{ backgroundColor: user.color}}
             >
+
             </div>
             </a>
 
@@ -28,7 +29,7 @@ function Index (props) {
             </div>
 
             <div class="header-right">
-            <a href="/users/login">Sign In</a>
+            <a href="/users/login">Log Out</a>
             </div>
             </div>
             <div>

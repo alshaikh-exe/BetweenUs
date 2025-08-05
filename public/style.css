@@ -178,6 +178,22 @@ a:visited {
     overflow: hidden;
 }
 
+.header-title-link {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.ask-title:hover {
+    color: #4190e2; 
+}
+
+.feel-title:hover {
+    color: #e24a6b; 
+}
+
+
+
 
 
 /* Posts */
