@@ -1,4 +1,5 @@
 const React = require("react");
+const Layout = require("layout");
 
 function Edit (props) {
     const reply = props.reply;

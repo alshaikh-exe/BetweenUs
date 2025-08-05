@@ -16,12 +16,14 @@ function Profile (props) {
             <ul>
                 {posts.length > 0 ? (
                     posts.map((post) => (
+                        post && post.author ? (
                         <li class="post-container">
                         {`${post.type}: ${post.title}`}
                         <br/>
                         <a href={`/post/${post._id}?token=${token}`}>{post.text}</a>
                         </li>
-                        ))
+                        ) : null
+                    ))
                     ) : (
                     <p>You haven't posted anything yet.</p>
                 )}
@@ -30,6 +32,7 @@ function Profile (props) {
             <ul>
                  {replies.length > 0 ? (
                     replies.map((reply) => (
+                        reply && reply.post ? (
                         <li>
                         {`${reply.text}`}
                         <br/>
@@ -37,7 +40,8 @@ function Profile (props) {
                         {reply.post.title}
                         </a>
                         </li>
-                        ))
+                        ) : null
+                    ))
                     ) : (
                     <p>You haven't replied to anything yet.</p>
                 )}

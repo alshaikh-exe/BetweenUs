@@ -358,6 +358,76 @@ a:visited {
 }
 
 
+/* New Post Page */
+.new-container {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #fdfaf5;
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    font-family: sans-serif;
+}
+
+.new-title {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.new-form .form-section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.new-form label {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.new-form input,
+.new-form select,
+.new-form textarea {
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.new-form input:focus,
+.new-form select:focus,
+.new-form textarea:focus {
+    border-color: grey;
+    box-shadow: 0 0 4px grey;
+}
+
+.post-btn {
+    display: block;
+    margin: 20px auto 0;
+    background: grey;
+    color: white;
+    font-weight: bold;
+    padding: 12px 20px;
+    border: 2px solid black;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.post-btn:hover {
+    background: #2d6bb4;
+    transform: translateY(-2px);
+}
+
+
+
 /* Replies */
 .post {
     position: relative;

@@ -21,10 +21,10 @@ exports.deletePost = async (req, res, next) => {
             return res.status(403).send({ message: "Not authorized to delete this post"})
         }
 
+        await Reply.deleteMany({ post: post._id });
         await Post.findOneAndDelete({ "_id": req.params.id })
-        .then(() => {
-            next();
-        });
+        
+        next();
     }
     catch (error) {
         res.status(400).send({ message: error.message });
@@ -82,16 +82,7 @@ exports.showPost = async (req, res, next) => {
         }
 
         res.locals.data.post = post
-        // console.log("user",req.user)
-        // console.log("Author", post.author)
-        // console.log(req.user._id.toString())
-        // console.log(post.author._id.toString())
-        // if (post.author._id.toString() !== req.user._id.toString()) {
-        //     console.log("true")
-        // }
-        // else{
-        //     console.log("false")
-        // }
+       
         if(req.path.includes("edit")) {
             if (!req.user || !post.author || post.author._id.toString() !== req.user._id.toString()) {
             return res.status(403).send({ message: "Not authorized to edit this post"})
