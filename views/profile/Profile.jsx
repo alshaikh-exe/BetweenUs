@@ -9,8 +9,20 @@ function Profile (props) {
 
     return (
           <Layout>
+            <div class="header">
+
+            <div class="header-center">
+            <a href={`/?token=${token}`} className="profile-back-link">
+            <h1>My Profile</h1>
+            </a>
+            </div>
+
+            <div class="header-right">
+            <a href="/users/login">Log Out</a>
+            </div>
+            </div>
+
         <div className="profile-container">
-            <a href={`/?token=${token}`} className="back-link">Back to Home Page</a>
             <div className="profile-header">
                 <div 
                     className="user-profile-pic" 

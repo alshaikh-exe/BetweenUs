@@ -15,7 +15,7 @@ a:visited {
 
 
 
-/* Sign up page */
+/* Sign up / login page */
 .signup-container {
     max-width: 400px;
     margin: 40px auto;
@@ -847,6 +847,22 @@ a:visited {
     border: 2px solid #ccc;
     border-radius: 12px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.profile-back-link {
+    display: block;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    margin-bottom: 15px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.profile-back-link:hover {
+    color: grey;
+    border-color: #777777;
 }
 
 .profile-header {
