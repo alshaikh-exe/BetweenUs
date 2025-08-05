@@ -43,7 +43,6 @@ function Feels (props) {
                                            <div class="user-profile-post"
                                                style={{ backgroundColor: post.author.color}}
                                            >
-                                               {/* <img src="/avatar.png" alt="avatar" class="avatar-img" /> */}
                                            </div>
                                            
                                             <span class="poster-name">{post.author.shortId || "Unknown" }</span>
