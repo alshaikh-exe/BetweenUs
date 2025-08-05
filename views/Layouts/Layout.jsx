@@ -5,6 +5,7 @@ function Layout (props) {
         <html>
         <head>
             <link rel="stylesheet" href="/style.css" />
+            <script src="/signUp.js"></script>
         </head>
         <body>
             {props.children}
