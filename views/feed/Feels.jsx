@@ -35,6 +35,7 @@ function Feels (props) {
                                    posts.map( (post) => {
                                        return (
                                        <li class="post">
+                                        <a href={`/post/${post._id}?token=${token}`} class="post-link-wrapper">
                                             <div class={`post-type ${post.type}`}>
                                                {post.type === "ask" ? "Ask" : "Feel"}
                                            </div>
@@ -52,9 +53,10 @@ function Feels (props) {
                                             <h3 class="post-title">{post.title}</h3>
                
                                             <p class="post-content">
-                                            <a href={`/post/${post._id}?token=${token}`}>{post.text}</a>
+                                            {post.text}
                                             </p>
                                             </div>
+                                            </a>
                                        </li>)
                                    })
                                }
