@@ -527,5 +527,74 @@ a:visited {
     color: #222;
 }
 
+/* Edit Post */
+.edit-container {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #fdfaf5;
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    font-family: sans-serif;
+}
+
+.edit-title {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.edit-form .form-section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.edit-form label {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.edit-form input,
+.edit-form select,
+.edit-form textarea {
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.edit-form input:focus,
+.edit-form select:focus,
+.edit-form textarea:focus {
+    border-color: #4190e2;
+    box-shadow: 0 0 4px #4190e2;
+}
+
+.update-btn {
+    display: block;
+    margin: 20px auto 0;
+    background: #4190e2;
+    color: white;
+    font-weight: bold;
+    padding: 12px 20px;
+    border: 2px solid black;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.update-btn:hover {
+    background: #2d6bb4;
+    transform: translateY(-2px);
+}
+
+
 
 

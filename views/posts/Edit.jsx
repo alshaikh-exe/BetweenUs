@@ -1,26 +1,37 @@
 const React = require('react')
+const Layout = require("../Layouts/Layout");
 
 function Edit (props) {
     const token = props.token;
     const { type, title, text, image, _id} = props.post
     return (
-        <div>
-            <h1>Edit Post Page</h1>
-            <a href={`/?token=${token}`}>Go back to Index Page</a>
-            <form action={`/post/${_id}?token=${token}&_method=PUT`} method="POST">
-                Type: <select name="type" id="postType" defaultValue={type}>
+        <Layout>
+        <div class="edit-container">
+            <h1 class="edit-title">Edit Post Page</h1>
+
+            <form action={`/post/${_id}?token=${token}&_method=PUT`} method="POST" class="edit-form">
+            <div class="form-section">
+            <label>Type:</label>
+                <select name="type" id="postType" defaultValue={type}>
                     <option value="ask">Ask</option>
                     <option value="feel">Feel</option>
                     </select>
-                <br/>
-                Title: <input type="text" name="title" defaultValue={title}/>
-                <br/>
-                Image: <input type="text" name="image" defaultValue={image}/>
-                <br/>
-                Text:  <input type="text" name="text" defaultValue={text}/>
-                <input type="submit" value="Update Post" />
+                </div>
+
+                <div class="form-section">
+                <label>Title:</label> 
+                <input type="text" name="title" defaultValue={title}/>
+                </div>
+
+                <div class="form-section">
+                <label>Text:</label>  
+                <input type="text" name="text" defaultValue={text}/>
+                </div>
+
+                <button type="submit" value="Update Post" class="btn update-btn">Update Post</button>
             </form>
         </div>
+        </Layout>
     )
 }
 
