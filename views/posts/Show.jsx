@@ -3,8 +3,13 @@ const React = require("react");
 function Show (props) {
     const token = props.token;
     const post = props.post;
+    const user = props.user;
     const replies = props.replies || [];
         console.log("Replies in Show.jsx:", replies)
+    
+    console.log(post.author.toString() === user._id.toString())
+    console.log(user._id.toString())
+    console.log(post.author.toString())
     return (
         <div>
             <h1>{post.title}</h1>
@@ -17,14 +22,19 @@ function Show (props) {
                 Image: {post.image}
                 <br/>
             </p>
-              <form action={`/post/${post._id}?_method=DELETE&token=${token}`} method="POST">
+            { post.author._id.toString() === user._id.toString() 
+              ? <form action={`/post/${post._id}?_method=DELETE&token=${token}`} method="POST">
                 <input type="submit" value="Delete this post"/>
             </form>
+            : ""
+            }
             <div>
-            <a href={`/post/edit/${post._id}/?token=${token}`}>
+                { post.author._id.toString() === user._id.toString() 
+           ? <a href={`/post/edit/${post._id}/?token=${token}`}>
             <button>Edit this post</button>
             </a>
-
+            : ""
+            }
             <h2>Replies</h2>
             {replies.length === 0 ? (
                <p>No replies yet. Be the first to reply!</p> 
@@ -39,9 +49,14 @@ function Show (props) {
                             by {reply.author.shortId}
                             {/* {new Date(reply.createdAt).toLocaleString()} */}
                         </small>
-                        <a href={`/post/${post._id}/replies/${reply._id}/edit?token=${token}`}>
+
+                        { post.author._id.toString() === user._id.toString() 
+                        ? <a href={`/post/${post._id}/replies/${reply._id}/edit?token=${token}`}>
                         Edit this reply
                         </a>
+                        : ""
+                        }
+                         
                         </div>
                    
                 )

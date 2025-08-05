@@ -19,6 +19,7 @@ exports.auth = async (req, res, next) => {
             throw new Error();
         }
         req.user = user;
+        res.locals.data.user = user;
         res.locals.data.token = token;
         next();
     }

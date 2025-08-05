@@ -17,7 +17,7 @@ exports.deletePost = async (req, res, next) => {
     try {
         const post = await Post.findById(req.params.id);
 
-        if (post.author.toString() !== req.user._id.toString()) {
+        if (post.author._id.toString() !== req.user._id.toString()) {
             return res.status(403).send({ message: "Not authorized to delete this post"})
         }
 
@@ -35,7 +35,7 @@ exports.updatePost = async (req, res, next) => {
     try {
          const post = await Post.findById(req.params.id);
 
-        if (!req.user || post.author.toString() !== req.user._id.toString()) {
+        if (!req.user || post.author._id.toString() !== req.user._id.toString()) {
             return res.status(403).send({ message: "Not authorized to edit this post"})
         }
 

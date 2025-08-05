@@ -19,8 +19,6 @@ function Profile (props) {
                         {`${post.type}: ${post.title}`}
                         <br/>
                         <a href={`/post/${post._id}?token=${token}`}>{post.text}</a>
-                        <br/>
-                        Votes: {post.votes}
                         </li>
                         ))
                     ) : (
@@ -37,8 +35,6 @@ function Profile (props) {
                         <a href={`/post/${reply.post._id}?token=${token}`}>
                         {reply.post.title}
                         </a>
-                        <br/>
-                        Votes: {reply.post.votes}
                         </li>
                         ))
                     ) : (

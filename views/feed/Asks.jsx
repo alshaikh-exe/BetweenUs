@@ -15,8 +15,6 @@ function Asks (props) {
                             <a href={`/post/${post._id}?token=${token}`}>{post.text}</a> 
                              <br/>
                              Posted by: {post.author.shortId}
-                            <br/>
-                           Votes: {post.votes}
                         </li>)
                     })
                 }

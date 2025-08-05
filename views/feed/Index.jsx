@@ -23,8 +23,6 @@ function Index (props) {
                             <a href={`/post/${post._id}?token=${token}`}>{post.text}</a> 
                              <br/>
                              Posted by: {post.author.shortId || "Unknown" }
-                            <br/>
-                           Votes: {post.votes}
                         </li>)
                     })
                 }
