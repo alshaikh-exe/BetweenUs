@@ -53,10 +53,10 @@ function Show (props) {
             { post.author._id.toString() === user._id.toString() 
               ? <div class="post-actions">
               <form action={`/post/${post._id}?_method=DELETE&token=${token}`} method="POST">
-                <input type="submit" value="Delete this post" class="btn delete-btn"/>
+                <button type="submit" value="Delete this post" class="btn delete-btn" style={{ backgroundColor: user.color}}>Delete this post</button>
             </form>
             <a href={`/post/edit/${post._id}/?token=${token}`}>
-            <button class="btn edit-btn">Edit this post</button>
+            <button class="btn edit-btn" style={{ backgroundColor: user.color}}>Edit this post</button>
             </a>
             </div>
             : ""

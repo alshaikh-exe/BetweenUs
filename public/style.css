@@ -13,6 +13,8 @@ a:visited {
     color: inherit
 }
 
+
+
 /* Sign up page */
 .signup-container {
     max-width: 400px;
@@ -90,7 +92,7 @@ a:visited {
 }
 
 .signup-footer a {
-    color: #4190e2; /* matches Ask blue */
+    color: #4190e2; 
     font-weight: bold;
     text-decoration: none;
     border-bottom: 2px solid transparent;
@@ -103,7 +105,7 @@ a:visited {
 }
 
 
-/* Home page header */
+/* Home page */
 .header {
     display: flex;
     justify-content: space-between;
@@ -237,7 +239,6 @@ a:visited {
     background-color: #e24a6b;
 }
 
-
 .post-header {
     display: flex;
     align-items: center;
@@ -284,6 +285,78 @@ a:visited {
     color: #444444;
     line-height: 1.5;
 } 
+
+.post-actions {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.post-actions form {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+.btn.action-btn {
+  color: white;
+  font-weight: bold;
+  padding: 10px 18px;
+  border: 2px solid black;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 0 5px;
+  transition: transform 0.1s ease, opacity 0.2s ease;
+}
+
+.btn.action-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.btn {
+    padding: 10px 16px;
+    font-weight: bold;
+    border: 2px solid black;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.delete-btn {
+    background: grey;
+    color: white;
+    font-weight: bold;
+    padding: 10px 18px;
+    border: 2px solid black;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.delete-btn:hover {
+    background: grey;
+    transform: translateY(-2px);
+}
+
+.edit-btn {
+    background: grey;
+    color: white;
+    font-weight: bold;
+    padding: 10px 18px;
+    border: 2px solid black;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.edit-btn:hover {
+    background: grey;
+    transform: translateY(-2px);
+}
+
 
 /* Replies */
 .post {
@@ -409,14 +482,12 @@ a:visited {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
-/* Align avatar, shortId, and text in one line */
 .reply-header {
   display: flex;
   align-items: center;
-  gap: 15px; /* spacing between avatar and text */
+  gap: 15px; 
 }
 
-/* avatar style */
 .reply-header .user-profile-post {
   width: 30px;
   height: 30px;
@@ -424,7 +495,7 @@ a:visited {
   border: 2px solid #ccc;
 }
 
-/* name + reply text grouped together */
+
 .reply-header .reply-info {
   display: flex;
   flex-direction: column;
@@ -466,8 +537,6 @@ a:visited {
   filter: brightness(1.2); 
 }
 
-
-/* Add Reply Form */
 .reply-form {
     background: #fdfaf5;
     border: 2px solid #ccc;
@@ -513,7 +582,6 @@ a:visited {
     transition: filter 0.2s ease, transform 0.1s ease;
 }
 
-/* lighten the color slightly on hover */
 .reply-btn:hover {
     filter: brightness(1.2);
     transform: translateY(-2px);
@@ -526,6 +594,8 @@ a:visited {
     margin: 60px 0 20px;
     color: #222;
 }
+
+
 
 /* Edit Post */
 .edit-container {
@@ -580,7 +650,7 @@ a:visited {
 .update-btn {
     display: block;
     margin: 20px auto 0;
-    background: #4190e2;
+    background: grey;
     color: white;
     font-weight: bold;
     padding: 12px 20px;

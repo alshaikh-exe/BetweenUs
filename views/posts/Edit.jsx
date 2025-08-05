@@ -3,6 +3,7 @@ const Layout = require("../Layouts/Layout");
 
 function Edit (props) {
     const token = props.token;
+    const post = props.post
     const { type, title, text, image, _id} = props.post
     return (
         <Layout>
@@ -28,7 +29,7 @@ function Edit (props) {
                 <input type="text" name="text" defaultValue={text}/>
                 </div>
 
-                <button type="submit" value="Update Post" class="btn update-btn">Update Post</button>
+                <button type="submit" value="Update Post" class="btn update-btn" style={{ backgroundColor: post.author.color }}>Update Post</button>
             </form>
         </div>
         </Layout>

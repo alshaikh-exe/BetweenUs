@@ -1,4 +1,5 @@
 const React = require('react')
+const Layout = require("")
 
 function New (props) {
     const token = props.token
