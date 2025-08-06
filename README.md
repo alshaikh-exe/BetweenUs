@@ -64,36 +64,32 @@ betweenus/
 ```
 
 ## 📌 Routes
-
-| METHOD | ENDPOINT                  | DESCRIPTION                                       | AUTH REQUIRED |
-|--------|---------------------------|---------------------------------------------------|---------------|
-| **USER ROUTES** ||||  
-| POST   | /users                    | Create new User (signup)                          | No            |
-| POST   | /users/login              | Login user (email + password)                     | No            |
-| POST   | /users/logout             | Logout user (end token/session)                   | Yes           |
-| GET    | /users/profile            | Get logged-in user profile (color, ID, posts)     | Yes           |
-| PUT    | /users/:id                | Update user info (color, password)                | Yes           |
-| DELETE | /users/:id                | Delete user account                               | Yes           |
-| **HOME ROUTES** ||||  
-| GET    | /                         | Home page (redirect to feed if logged in, login otherwise) | No    |
-| GET    | /feed                     | Show all posts feed (Asks & Feels)                | Yes           |
-| GET    | /feed/asks                | Show only Asks feed                               | Yes           |
-| GET    | /feed/feels               | Show only Feels feed                              | Yes           |
-| **POST ROUTES** ||||  
-| POST   | /posts                    | Create new post (Ask or Feel)                     | Yes           |
-| GET    | /posts/:id                | Get single post by its ID                         | Yes           |
-| PUT    | /posts/:id                | Update a post (author only)                       | Yes           |
-| DELETE | /posts/:id                | Delete a post (author only)                       | Yes           |
-| **REPLY ROUTES** ||||  
-| POST   | /posts/:id/replies        | Add a reply to a specific post                    | Yes           |
-| GET    | /posts/:id/replies        | Get all replies for a specific post               | Yes           |
-| PUT    | /replies/:id              | Update a reply (author only)                      | Yes           |
-| DELETE | /replies/:id              | Delete a reply (author only)                      | Yes           |
-| **VOTE ROUTES** ||||  
-| POST   | /posts/:id/vote           | Upvote or downvote a specific post                | Yes           |
-| POST   | /replies/:id/vote         | Upvote or downvote a specific reply               | Yes           |
- 
-
+| METHOD | ENDPOINT                       | DESCRIPTION                                        | AUTH REQUIRED |
+|--------|--------------------------------|----------------------------------------------------|----------------|
+| **AUTH ROUTES**                         |                                                    |                |
+| GET    | /signup                        | Render signup page                                 | No             |
+| POST   | /signup                        | Create new user                                    | No             |
+| GET    | /login                         | Render login page                                  | No             |
+| POST   | /login                         | Log in user                                        | No             |
+| **PROFILE ROUTES**                      |                                                    |                |
+| GET    | /profile                       | Show logged-in user's profile                      | Yes            |
+| **FEED ROUTES**                         |                                                    |                |
+| GET    | /                              | Show all posts (feed)                              | Yes            |
+| GET    | /asks                          | Show only Ask posts                                | Yes            |
+| GET    | /feels                         | Show only Feel posts                               | Yes            |
+| **POST ROUTES**                         |                                                    |                |
+| GET    | /post/new                      | Render new post form                               | Yes            |
+| POST   | /                              | Create a new post                                  | Yes            |
+| GET    | /post/:id                      | Show single post                                   | Yes            |
+| GET    | /post/edit/:id                 | Render edit form for a post                        | Yes            |
+| PUT    | /post/:id                      | Update a post                                      | Yes            |
+| DELETE | /post/:id                      | Delete a post                                      | Yes            |
+| **REPLY ROUTES**                        |                                                    |                |
+| GET    | /post/:id/replies              | Get all replies for post                           | Yes            |
+| POST   | /post/:id/replies              | Create a reply for post                            | Yes            |
+| GET    | /:replyId/edit                 | Render reply edit form                             | Yes            |
+| PUT    | /:replyId                      | Update a reply                                     | Yes            |
+| DELETE | /:replyId                      | Delete a reply                                     | Yes            |
 
 ## ⚙️ Features
 
