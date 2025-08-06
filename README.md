@@ -8,47 +8,58 @@ The platform emphasizes anonymity and authenticity, enabling posts, replies, and
 ```
 betweenus/
 ├── controllers/
-│   ├── userController.js
-│   ├── postController.js
-│   ├── replyController.js
-│   └── voteController.js
+│   ├── auth/
+│   │   ├── dataController.js
+│   │   ├── routeController.js
+│   │   └── viewController.js
+│   ├── feed/
+│   │   ├── dataController.js
+│   │   ├── routeController.js
+│   │   └── viewController.js
+│   ├── replies/
+│   │   ├── dataController.js
+│   │   ├── routeController.js
+│   │   └── viewController.js
+│   └── votes/
+│       ├── dataController.js
+│       ├── routeController.js
+│       └── viewController.js
 │
 ├── models/
-│   ├── User.js
-│   ├── Post.js
-│   ├── Reply.js
-│   └── Vote.js
+│   ├── db.js
+│   ├── post.js
+│   ├── reply.js
+│   ├── user.js
+│   └── vote.js
 │
-├── routes/
-│   ├── userRoutes.js
-│   ├── postRoutes.js
-│   ├── replyRoutes.js
-│   └── voteRoutes.js
+├── public/
+│   ├── signUp.js
+│   └── style.css
 │
-├── views/               
-│   ├── auth/
-│   │   ├── Login.jsx
-│   │   └── Signup.jsx
+├── views/
+│   ├── feed/
+│   │   ├── Asks.jsx
+│   │   ├── Feels.jsx
+│   │   └── Index.jsx
+│   ├── Layouts/
+│   │   └── Layout.jsx
 │   ├── posts/
-│   │   ├── Index.jsx
-│   │   ├── Show.jsx
+│   │   ├── Edit.jsx
 │   │   ├── New.jsx
-│   │   └── Edit.jsx
-│   ├── replies/
-│   │   ├── New.jsx
-│   │   └── Edit.jsx
-│   └── profile/
-│       └── Profile.jsx
+│   │   └── Show.jsx
+│   ├── profile/
+│   │   └── Profile.jsx
+│   └── replies/
+│       ├── Edit.jsx
+│       └── New.jsx
 │
-├── tests/
-│   ├── user.test.js
-│
-├── app.js                
-├── server.js             
-├── .env                  
+├── app.js
+├── server.js
+├── .env
 ├── .gitignore
-├── artillery.yml          
 ├── package.json
+├── package-lock.json
+└── README.md
 
 ```
 
