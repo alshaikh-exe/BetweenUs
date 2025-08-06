@@ -101,9 +101,21 @@ betweenus/
 
 - 💬 Replies: Respond to posts to keep conversations going
 
-- 👍👎 Votes: Upvote or downvote posts and replies
-
 - 🔑 Authentication: Secure login/logout using JWT
+
+## Future Features 🔜
+
+- **👤 Avatars & Identity Layers:** Replace blank color circles with customizable avatars tied to user colors. Avatars provide visual personality while preserving anonymity, creating a more engaging and humanized social experience.
+
+- **🤝 Connection Requests:** Introduce a layered identity reveal system. Users can send an initial connection request to unlock the first letter of another user’s first name, and a second request to see the full name. Profile pages will also show the number of connections, adding emotional stakes to interaction while maintaining mystery.
+
+- **💬 Threaded Conversations:** Enable replies to replies, allowing deeper dialogues and branching conversations. This creates richer discussions that move beyond surface-level interactions and foster nuanced engagement.
+
+- **👥 Communities & DMs:** Group users by their assigned color into shared group chats, forming “color communities.” These communities serve as semi-anonymous hubs where users can discuss, support, and connect. Direct messages between connected users further extend intimacy while balancing privacy and trust.
+
+## 📝 Planning Materials 
+
+- [Trello Board](https://trello.com/invite/b/688b198fd60bbb792d9c6aa6/ATTI7132cc1e0d0ec2907ee2124637a1fdf88555526F/betweenus)
 
 ## 💻 Tech Stack
 
@@ -120,3 +132,10 @@ betweenus/
 - React
 - jsx-view-engine
 - CSS
+
+## 🎥 Attributions
+
+- **Concept, code & design by: Abdulla Alshaikh**
+- **General inquiries answered by: [Stack Overflow](https://stackoverflow.com/questions)**
+- **Syntax references** from: [MDN Web Docs](https://developer.mozilla.org/), [W3Schools](https://www.w3schools.com/)  
+- **Debugging, styling assistance & refinement** by: [ChatGPT](https://chatgpt.com/) 
