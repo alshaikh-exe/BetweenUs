@@ -143,7 +143,6 @@ betweenus/
 - jsonwebtoken (JWT)
 - method-override
 - Morgan
-- artillery
 - React
 - jsx-view-engine
 - CSS
