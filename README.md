@@ -117,7 +117,20 @@ betweenus/
 
 ## 📝 Planning Materials 
 
-- [Trello Board](https://trello.com/invite/b/688b198fd60bbb792d9c6aa6/ATTI7132cc1e0d0ec2907ee2124637a1fdf88555526F/betweenus)
+### Sign-up Page UI-Outline
+<img width="1030" height="580" alt="Signup Page Outline" src="https://github.com/user-attachments/assets/8e4fa755-790f-44ac-8e96-1c02260231f8" />
+
+### Login Page UI-Outline
+<img width="1020" height="590" alt="Screenshot 2025-08-07 at 8 40 52 am" src="https://github.com/user-attachments/assets/28355da8-c7ba-4f87-91e0-d1cf2d294062" />
+
+### Home Page UI-Outline
+<img width="1020" height="586" alt="Screenshot 2025-08-07 at 8 41 01 am" src="https://github.com/user-attachments/assets/5b54ba00-7655-408b-b4c1-e79449178737" />
+
+### Posts UI-Outline
+<img width="1017" height="586" alt="Screenshot 2025-08-07 at 8 41 20 am" src="https://github.com/user-attachments/assets/08cba1bf-a8f0-47c6-a160-9f025f3f8d15" />
+
+### Trello Board
+[Trello Board](https://trello.com/invite/b/688b198fd60bbb792d9c6aa6/ATTI7132cc1e0d0ec2907ee2124637a1fdf88555526F/betweenus)
 
 ## 💻 Tech Stack
 
