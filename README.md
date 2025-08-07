@@ -4,6 +4,8 @@ A social media forum for anonymous expression.
 Users are represented only by a color and a system‑generated ID, allowing them to share Feels (thoughts, opinions, expressions) and Asks (questions).
 The platform emphasizes anonymity and authenticity, enabling posts, replies, and votes without revealing personal details.
 
+<img width="1470" height="797" alt="BetweenUs Home Page" src="https://github.com/user-attachments/assets/84b471fd-d155-4fe6-bae2-8f2b9a71e460" />
+
 ## 📁 File Structure
 ```
 betweenus/
