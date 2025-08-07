@@ -139,5 +139,5 @@ betweenus/
 
 - **Concept, code & design by: Abdulla Alshaikh**
 - **General inquiries answered by: [Stack Overflow](https://stackoverflow.com/questions)**
-- **Syntax references** from: [MDN Web Docs](https://developer.mozilla.org/), [W3Schools](https://www.w3schools.com/)  
+- **Syntax references from:** [MDN Web Docs](https://developer.mozilla.org/), [W3Schools](https://www.w3schools.com/)  
 - **Debugging, styling assistance & refinement** by: [ChatGPT](https://chatgpt.com/) 
