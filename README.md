@@ -69,12 +69,12 @@ betweenus/
 | METHOD | ENDPOINT                       | DESCRIPTION                                        | AUTH REQUIRED |
 |--------|--------------------------------|----------------------------------------------------|----------------|
 | **AUTH ROUTES**                         |                                                    |                |
-| GET    | /signup                        | Render signup page                                 | No             |
-| POST   | /signup                        | Create new user                                    | No             |
-| GET    | /login                         | Render login page                                  | No             |
-| POST   | /login                         | Log in user                                        | No             |
+| GET    | users/signup                        | Render signup page                                 | No             |
+| POST   | users/signup                        | Create new user                                    | No             |
+| GET    | users/login                         | Render login page                                  | No             |
+| POST   | users/login                         | Log in user                                        | No             |
 | **PROFILE ROUTES**                      |                                                    |                |
-| GET    | /profile                       | Show logged-in user's profile                      | Yes            |
+| GET    | users/profile                       | Show logged-in user's profile                      | Yes            |
 | **FEED ROUTES**                         |                                                    |                |
 | GET    | /                              | Show all posts (feed)                              | Yes            |
 | GET    | /asks                          | Show only Ask posts                                | Yes            |
